@@ -1,0 +1,13 @@
+<h4>Ng-if fade animation</h4>
+<button (click)="toggleElement()">toggle - fade</button>
+
+<div *ngIf="toggle" [@fadeInOut]="toggle">
+    <div class="row">
+        <div class="col border-temp">
+            This is here
+        </div>
+        <div class="col border-temp">
+            and this is here
+        </div>
+    </div>
+    <div>

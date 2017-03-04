@@ -1,0 +1,31 @@
+<div *ngIf="error">An error occurred while loading, please reload the page</div>
+
+<select [(ngModel)]="selectedValue">
+    <option value="AMD" *ngFor="let stockQuote of stockCodes">{{stockQuote.stockCode}}</option>
+</select>
+<!--<span *ngFor="let name of name "><h3>{{name}}</h3></span>-->
+<span *ngFor="let symbol of symbol "><h3>{{name}} - {{symbol}}</h3></span>
+
+<span *ngFor="let ask of ask "><span>ASK: {{ask | currency:'USD':true:'2.2-2'}}</span></span>
+
+<span *ngFor="let last of lastTradedPrice "><span class="text" [ngClass]="{green: last > bid,red: last < ask}">Last Trade: {{last | currency:'USD':true:'2.2-2'}}</span></span>
+
+<span *ngFor="let bid of bid "><span>Bid: {{bid | currency:'USD':true:'2.2-2'}}</span></span>
+<br>
+<span *ngFor="let change of change ">% Change: {{change}}</span>
+<span *ngFor="let low of low ">Days low: {{low | currency:'USD':true:'2.2-2'}}</span>
+<span *ngFor="let high of high ">Days high: {{high | number:'2.2-5'}}</span>
+<span *ngFor="let close of previousClose ">Previous Close: {{close | number:'2.2-5'}}</span>
+<br>
+<button type="" (click)="showMe()">Open Modal</button>
+<div *ngIf="visible" class="animated fadeIn ">
+    <div [ngClass]="{'foo':true}">
+        <div class="content">
+            <h2>You should be looking at me now</h2>
+            <button type="" (click)="showMe()">Close Modal</button>
+        </div>
+
+    </div>
+</div>
+<br>
+<lp-fade></lp-fade>
