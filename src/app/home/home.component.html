@@ -1,8 +1,11 @@
 <div *ngIf="error">An error occurred while loading, please reload this page. Thank you!</div>
 
-<select [(ngModel)]="selectedValue">
+<button (click)="getStock(stocks.value)">Get Stocks</button>
+<input type="text" name="" value="" #stocks>
+
+<!--<select [(ngModel)]="selectedValue">
     <option value="AMD" *ngFor="let stockQuote of stockCodes">{{stockQuote.stockCode}}</option>
-</select>
+</select>-->
 <!--<span *ngFor="let name of name "><h3>{{name}}</h3></span>-->
 <span *ngFor="let symbol of symbol "><h3>{{name}} - {{symbol}}</h3></span>
 
@@ -17,7 +20,8 @@
 <span *ngFor="let high of high ">Days high: {{high | number:'2.2-5'}}</span>
 <span *ngFor="let close of previousClose ">Previous Close: {{close | number:'2.2-5'}}</span>
 <br>
-<button type="" (click)="showMe()">Open Modal</button>
+
+<!--<button type="" (click)="showMe()">Open Modal</button>
 <div *ngIf="visible" class="animated fadeIn ">
     <div [ngClass]="{'foo':true}">
         <div class="content">
@@ -26,6 +30,6 @@
         </div>
 
     </div>
-</div>
-<br>
-<lp-fade></lp-fade>
+</div>-->
+<!--<br>
+<lp-fade></lp-fade>-->

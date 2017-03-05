@@ -22,6 +22,13 @@ export class HomeComponent implements OnInit {
   public previousClose: number[];
   public name: string[];
 
+public stocks: string;
+
+getStock(value){
+this.stocks = value;
+console.log(this.stocks);
+}
+
   stockCodes = [
     { id: 1, stockCode: "AMD" },
     { id: 2, stockCode: "YHOO" },
@@ -63,4 +70,5 @@ export class HomeComponent implements OnInit {
 showMe(){
 this.visible = !this.visible  
 }
+
 } // end class
