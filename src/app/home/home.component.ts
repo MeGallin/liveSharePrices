@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
 
 public stocks: string;
 
-getStock(value){
-this.stocks = value;
+getStock(){
+this.stocks = '';
 console.log(this.stocks);
 }
 
@@ -65,10 +65,12 @@ console.log(this.stocks);
   }
 
   ngOnInit() {
-  }
+     }
 
 showMe(){
 this.visible = !this.visible  
 }
+
+
 
 } // end class

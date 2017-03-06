@@ -1,7 +1,7 @@
 <div *ngIf="error">An error occurred while loading, please reload this page. Thank you!</div>
 
-<button (click)="getStock(stocks.value)">Get Stocks</button>
-<input type="text" name="" value="" #stocks>
+<button (click)="getStock()">Get Stocks</button>
+<input type="text" name="" value="" #parentInput (keyup)="0">
 
 <!--<select [(ngModel)]="selectedValue">
     <option value="AMD" *ngFor="let stockQuote of stockCodes">{{stockQuote.stockCode}}</option>

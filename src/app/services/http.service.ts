@@ -1,15 +1,16 @@
-import { Injectable } from '@angular/core';
+// Getting data froma service https://plnkr.co/edit/neM6EdYYUkGkRpF0fKGS?p=preview
+
+import { Injectable, Input } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 
 export class HttpService {
-
-  stockQuote: string = "TSLA";
-
-
+ 
+@Input()  stockQuote: string = "TSLA";
 
   private baseUrl = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22' + this.stockQuote + '%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=';
 
@@ -31,6 +32,9 @@ export class HttpService {
       this.http.get(this.baseUrl).map(response => response.json().query.results.quote.Name)
     );
   }
+
+  // Shared service
+
 
 }// end of class
 
