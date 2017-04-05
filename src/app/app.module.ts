@@ -7,8 +7,6 @@ import { AppComponent } from './app.component';
 import { FadeComponent } from './fade/fade.component';
 import { HomeComponent } from './home/home.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
